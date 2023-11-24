@@ -24,6 +24,7 @@ export default async function TravelList() {
 
   return (
     <main className="flex flex-col justify-center items-center shrink-0">
+        <div className="grid grid-cols-2 gap-4 p-8 m-auto"> 
       {travels.map((travel) => (
         <div
           className="mx-32 my-8 p-8 w-full max-w-4xl bg-gray-100 leading-loose rounded-lg"
@@ -51,6 +52,7 @@ export default async function TravelList() {
       {travels.length === 0 && (
         <p className="text-center text-2xl">No travels found.</p>
       )}
+      </div>
     </main>
   );
 }

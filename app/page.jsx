@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import sub from './assets/images/Sub-img.jpg';
+import sub from './images/Sub-img.jpg';
 
 
 export default function Home() {
