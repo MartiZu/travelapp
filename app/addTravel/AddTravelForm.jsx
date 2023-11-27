@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-const baseURL = "https://travel-app-backend-oimo.onrender.com"
+const baseURL = "https://travel-app-backend-oimo.onrender.com";
 
 export default function AddTravelForm() {
   const [city, setCity] = useState("");
@@ -47,15 +47,15 @@ export default function AddTravelForm() {
 
   return (
     <form
-      className="flex flex-row justify-center items-center mb-80 border-2 border-black border-solid shadow-2xl"
+      className="flex flex-row justify-center items-center border-2 border-black border-solid shadow-2xl"
       onSubmit={submitForm}
     >
       {/* <div></div> */}
-      <div className="boarder-radius:0.5rem bg-gray-100 w-full max-w-7xl h-full text-2xl">
+      <div className="boarder-radius:0.5rem bg-gray-100 w-full max-w-7xl text-2xl">
         <h1 className="text-center m-4 px-64 text-5xl p-2">
           Add a new Travel Destination
         </h1>
-        <div className="flex flex-row w-full h-full p-4 border-2 border-black border-solid">
+        <div className="flex flex-row w-full p-4 border-2 border-black border-solid">
           <div className="left m-4 w-1/2 flex flex-col justify-evenly">
             <label className="flex flex-row items-center gap-3 h-16">
               <p>City</p>
