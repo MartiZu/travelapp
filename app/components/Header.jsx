@@ -12,7 +12,7 @@ export default function Header() {
         <Link className="hover:underline" href="/travels">
           Travels
         </Link>
-        <Link className="hover:underline" href="/addTravels">
+        <Link className="hover:underline" href="/addTravel">
           <button className="bg-pink-600 py-3 px-8 text-white rounded-2xl">
             Add Travel
           </button>

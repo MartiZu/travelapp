@@ -1,5 +1,7 @@
+const baseURL = "https://travel-app-backend-oimo.onrender.com"
+
 async function getTravels(id) {
-    const response = await fetch(`http://localhost:4000/travels/${id}`, {
+    const response = await fetch(`${baseURL}/travel/${id}`, {
       next: {
         revalidate: 0,
       },

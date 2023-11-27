@@ -14,7 +14,7 @@ async function getTravels() {
   });
   //   console.log(response);
   const travels = await response.json();
-  //   console.log(travels);
+    console.log(travels);
   return travels.data;
 }
 
@@ -27,7 +27,7 @@ export default async function TravelList() {
         <div className="grid grid-cols-2 gap-4 p-8 m-auto"> 
       {travels.map((travel) => (
         <div
-          className="mx-32 my-8 p-8 w-full max-w-4xl bg-gray-100 leading-loose rounded-lg"
+          className="mx-32 my-8 p-8 w-full max-w-4xl leading-loose rounded-lg"
           key={travel.id}
         >
           <Link href={`/travels/${travel.id}`}>

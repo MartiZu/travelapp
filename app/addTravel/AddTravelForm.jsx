@@ -1,104 +1,139 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+const baseURL = "https://travel-app-backend-oimo.onrender.com"
 
 export default function AddTravelForm() {
-  const [author, setAuthor] = useState("");
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [room, setRoom] = useState("");
-  const [status, setStatus] = useState("open");
+  const [city, setCity] = useState("");
+  const [country, setCountry] = useState("");
+  const [vistitime, setVisittime] = useState("");
+  const [funfact, setFunfact] = useState("");
+  const [image, setImage] = useState("");
+  const [notmiss, setNotmiss] = useState("");
 
   const router = useRouter();
 
   const submitForm = async (e) => {
     e.preventDefault();
 
-    const newTicket = {
-      author,
-      title,
-      description,
-      room,
-      status,
-    };
+    try {
+      const newTravel = {
+        city,
+        country,
+        best_time_to_visit: vistitime,
+        fun_fact: funfact,
+        imglink: image,
+        not_to_miss: notmiss,
+      };
 
-    const response = await fetch("http://localhost:4000/tickets", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTicket),
-    });
+      const response = await fetch(`${baseURL}/travel`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(newTravel),
+      });
 
-    if (response.ok) {
-      router.refresh();
-      router.push("/tickets");
+      if (response.ok) {
+        router.refresh();
+        router.push("/travels");
+      } else {
+        console.error("Failed to fetch:", response.status, response.statusText);
+      }
+    } catch (error) {
+      console.error("Error during fetch:", error);
     }
   };
 
   return (
     <form
-      className="flex flex-row justify-center items-center mb-80"
+      className="flex flex-row justify-center items-center mb-80 border-2 border-black border-solid shadow-2xl"
       onSubmit={submitForm}
     >
       {/* <div></div> */}
-      <div className="boarder-radius:0.5rem bg-gray-100 w-full max-w-4xl h-full text-2xl">
-        <h1 className="text-center m-4 px-64 text-5xl">New ticket form</h1>
-        <div className="flex flex-row w-full">
-          <div className="left m-4 w-1/2 flex flex-col place-content-between h-56">
-            <label className="flex flex-row items-center gap-3">
-              <p>Author</p>
+      <div className="boarder-radius:0.5rem bg-gray-100 w-full max-w-7xl h-full text-2xl">
+        <h1 className="text-center m-4 px-64 text-5xl p-2">
+          Add a new Travel Destination
+        </h1>
+        <div className="flex flex-row w-full h-full p-4 border-2 border-black border-solid">
+          <div className="left m-4 w-1/2 flex flex-col justify-evenly">
+            <label className="flex flex-row items-center gap-3 h-16">
+              <p>City</p>
               <input
                 className="w-full text-base h-8 px-3"
                 type="text"
                 required
-                placeholder="Tell us your name"
-                name="author"
-                value={author}
-                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="What city did you visit"
+                name="city"
+                value={city}
+                onChange={(e) => setCity(e.target.value)}
               />
             </label>
-            <label className="flex flex-row items-center gap-9">
-              <p className="">Title</p>
+            <label className="flex flex-row items-center gap-9 h-16">
+              <p className="">Country</p>
               <input
                 className="w-full text-base h-8 px-3"
                 type="text"
                 required
-                placeholder="Tell us the title of your problem"
-                name="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                placeholder="What country is this in?"
+                name="country"
+                value={country}
+                onChange={(e) => setCountry(e.target.value)}
               />
             </label>
             <label className="flex flex-row items-center gap-5">
-              <p>Room</p>
+              <p>Best time to visit</p>
               <input
                 className="w-full text-base h-8 px-3"
                 type="text"
                 required
                 placeholder="Your room number"
                 name="room"
-                value={room}
-                onChange={(e) => setRoom(e.target.value)}
+                value={vistitime}
+                onChange={(e) => setVisittime(e.target.value)}
+              />
+            </label>
+            <label className="flex flex-row items-center gap-3">
+              <p>Link to an Image</p>
+              <input
+                className="w-full text-base h-8 px-3"
+                type="text"
+                required
+                placeholder="Copy the link to an image"
+                name="image"
+                value={image}
+                onChange={(e) => setImage(e.target.value)}
+              />
+            </label>
+            <label className="flex flex-row items-center gap-3">
+              <p>Not to miss..</p>
+              <input
+                className="w-full text-base h-8 px-3"
+                type="text"
+                required
+                placeholder="Tell us what you should not miss"
+                name="notmiss"
+                value={notmiss}
+                onChange={(e) => setNotmiss(e.target.value)}
               />
             </label>
           </div>
-          <div className="right w-1/2 m-4">
+          <div className="right w-1/2 m-4 p-4">
             {/* <p>Description</p> */}
             <textarea
               className="h-full w-full text-base"
               required
-              placeholder="Tell us about a problem"
+              placeholder="Tell a fun fact"
               name="description"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              value={funfact}
+              onChange={(e) => setFunfact(e.target.value)}
             />
           </div>
         </div>
         <div className="flex flex-row justify-center mt-4">
           <button
             type="submit"
-            className="bg-green-600 text-white mb-4 py-3 px-9"
+            className="bg-pink-600 text-white mb-4 py-3 px-9 rounded-2xl"
           >
             Submit!
           </button>
