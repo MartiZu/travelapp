@@ -53,20 +53,20 @@ export default function AddTravelForm() {
 
   return (
     <form
-      className="flex flex-row justify-center items-center border-2 border-black border-solid shadow-2xl"
+      className="flex flex-row justify-center items-center border-2 rounded-lg border-black border-solid shadow-2xl"
       onSubmit={submitForm}
     >
       {/* <div></div> */}
-      <div className="boarder-radius:0.5rem bg-gray-100 w-full max-w-7xl text-2xl">
-        <h1 className="text-center m-4 px-64 text-5xl p-2">
+      <div className="boarder-radius:0.5rem4 w-full max-w-7xl text-2xl ">
+        <h1 className="text-center m-4 px-64 text-5xl p-2 ">
           Add a new Travel Destination
         </h1>
-        <div className="flex flex-row w-full p-4 border-2 border-black border-solid">
-          <div className="left m-4 w-1/2 flex flex-col justify-evenly">
-            <label className="flex flex-row items-center gap-3 h-16">
-              <p>City</p>
+        <div className="flex flex-row w-full p-4 border-1 border-black border-solid ">
+          <div className="left w-1/2 m-4 grid grid-cols-2 gap-6">
+            <label className="flex flex-row items-center col-span-2">
+              {/* <p>City</p> */}
               <input
-                className="w-full text-base h-8 px-3"
+                className="w-full text-base h-8 px-3 rounded-lg border-2 border-black border-solid shadow-2xl"
                 type="text"
                 required
                 placeholder="What city did you visit"
@@ -75,49 +75,49 @@ export default function AddTravelForm() {
                 onChange={(e) => setCity(e.target.value)}
               />
             </label>
-            <label className="flex flex-row items-center gap-9 h-16">
-              <p className="">Country</p>
+            <label className="flex flex-row items-center col-span-2">
+              {/* <p className="">Country</p> */}
               <input
-                className="w-full text-base h-8 px-3"
+                className="w-full text-base h-8 px-3 rounded-lg border-2 border-black border-solid shadow-2xl"
                 type="text"
                 required
-                placeholder="What country is this in?"
+                placeholder="What country is the city in?"
                 name="country"
                 value={country}
                 onChange={(e) => setCountry(e.target.value)}
               />
             </label>
-            <label className="flex flex-row items-center gap-5">
-              <p>Best time to visit</p>
+            <label className="flex flex-row items-center gap-5 col-span-2">
+              {/* <p>Best time to visit</p> */}
               <input
-                className="w-full text-base h-8 px-3"
+                className="w-full text-base h-8 px-3 rounded-lg border-2 border-black border-solid shadow-2xl"
                 type="text"
                 required
-                placeholder="Your room number"
+                placeholder="When is the best time to visit"
                 name="room"
                 value={visittime}
                 onChange={(e) => setVisittime(e.target.value)}
               />
             </label>
-            <label className="flex flex-row items-center gap-3">
-              <p>Link to an Image</p>
+            <label className="flex flex-row items-center gap-3 col-span-2">
+              {/* <p>Link to an Image</p> */}
               <input
-                className="w-full text-base h-8 px-3"
+                className="w-full text-base h-8 px-3 rounded-lg border-2 border-black border-solid shadow-2xl"
                 type="text"
                 required
-                placeholder="Copy the link to an image"
+                placeholder="Copy the link to an image of the city"
                 name="image"
                 value={image}
                 onChange={(e) => setImage(e.target.value)}
               />
             </label>
-            <label className="flex flex-row items-center gap-3">
-              <p>Not to miss..</p>
+            <label className="flex flex-row items-center gap-3 col-span-2">
+              {/* <p>Not to miss..</p> */}
               <input
-                className="w-full text-base h-8 px-3"
+                className="w-full text-base h-8 px-3 rounded-lg border-2 border-black border-solid shadow-2xl"
                 type="text"
                 required
-                placeholder="Tell us what you should not miss"
+                placeholder="Tell us what you should not miss when visiting"
                 name="notmiss"
                 value={notmiss}
                 onChange={(e) => setNotmiss(e.target.value)}
@@ -127,9 +127,9 @@ export default function AddTravelForm() {
           <div className="right w-1/2 m-4 p-4">
             {/* <p>Description</p> */}
             <textarea
-              className="h-full w-full text-base"
+              className="h-full w-full p-2 text-base rounded-lg border-2 border-black border-solid shadow-2xl"
               required
-              placeholder="Tell a fun fact"
+              placeholder="Tell us a fun fact about something related to this city"
               name="description"
               value={funfact}
               onChange={(e) => setFunfact(e.target.value)}

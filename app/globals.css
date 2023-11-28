@@ -4,8 +4,9 @@
 
 :root {
   --foreground-color-light: #000; /* Default foreground color for light mode */
-  --background-color-light: #f0f0f0; /* Default background color for light mode */
+  --background-color-light: #ffffff; /* Default background color for light mode */
   --background-color-dark: #333; /* Default background color for dark mode */
+  --foreground-color-dark: #fff; /* Foreground color for dark mode */
 }
 
 body {
@@ -13,11 +14,15 @@ body {
   background-color: var(--background-color-light); /* Set the background color to light by default */
 }
 
-.dark-mode {
-  --foreground-color-dark: #fff; /* Foreground color for dark mode */
-}
-
 .dark-mode body {
   color: var(--foreground-color-dark);
   background-color: var(--background-color-dark); /* Change the background color to dark in dark mode */
+}
+
+input, textarea {
+  color: var(--foreground-color-light);
+}
+
+.dark-mode input, .dark-mode textarea {
+  color: var(--foreground-color-light);
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import img from "../images/image-file.png"
 const baseURL = "https://travel-app-backend-oimo.onrender.com";
 
 async function getTravels() {
@@ -36,21 +37,27 @@ export default async function TravelList() {
   console.log(travels);
 
   return (
-    <main className="flex flex-col justify-center items-center shrink-0">
-      <div className="grid grid-cols-2 gap-4 p-8 m-auto">
+    <main className="flex flex-col justify-center items-center shrink-0 m-20">
+      <div className="grid grid-cols-2 gap-6 p-2">
         {travels.map((travel) => (
           <div
-            className="mx-32 my-8 p-8 w-full max-w-4xl leading-loose rounded-lg"
+            className="grid grid-cols-3 p-8 w-full max-w-4xl leading-loose rounded-lg border-2 border-black border-solid shadow-2xl"
             key={travel.id}
           >
-            <Link href={`/travels/${travel.id}`}>
-              <h2 className="font-bold text-xl">
-                {travel.city}, {travel.country}
-              </h2>
-              <p>{travel.best_time_to_visit}</p>
+            <div className="col-span-2">
+              <Link href={`/travels/${travel.id}`}>
+                <h2 className="font-bold text-xl">
+                  {travel.city}, {travel.country}
+                </h2>
+                <p>{travel.best_time_to_visit}</p>
 
-              <p>{travel.fun_fact}</p>
-              <p>{travel.not_to_miss}</p>
+                <p>{travel.fun_fact}</p>
+                <p className="underline">{travel.not_to_miss}</p>
+              </Link>
+            </div>
+
+            <div className="p-4">
+              <Image src={img} placeholder="blur" blurDataURL="" alt="icon"/>
               {/* <Image
                 src={travel.imglink}
                 alt={`Image for ${travel.city}`}
@@ -58,7 +65,7 @@ export default async function TravelList() {
                 height={24}
                 priority
               /> */}
-            </Link>
+            </div>
           </div>
         ))}
         {travels.length === 0 && (
