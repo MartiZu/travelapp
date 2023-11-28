@@ -6,7 +6,7 @@ const baseURL = "https://travel-app-backend-oimo.onrender.com";
 export default function AddTravelForm() {
   const [city, setCity] = useState("");
   const [country, setCountry] = useState("");
-  const [vistitime, setVisittime] = useState("");
+  const [visittime, setVisittime] = useState("");
   const [funfact, setFunfact] = useState("");
   const [image, setImage] = useState("");
   const [notmiss, setNotmiss] = useState("");
@@ -20,7 +20,7 @@ export default function AddTravelForm() {
       const newTravel = {
         city,
         country,
-        best_time_to_visit: vistitime,
+        best_time_to_visit: visittime,
         fun_fact: funfact,
         imglink: image,
         not_to_miss: notmiss,
@@ -35,8 +35,14 @@ export default function AddTravelForm() {
       });
 
       if (response.ok) {
-        router.refresh();
-        router.push("/travels");
+        // Reset the form fields
+        setCity("");
+        setCountry("");
+        setVisittime("");
+        setFunfact("");
+        setImage("");
+        setNotmiss("");
+        router.push("/travel");
       } else {
         console.error("Failed to fetch:", response.status, response.statusText);
       }
@@ -89,7 +95,7 @@ export default function AddTravelForm() {
                 required
                 placeholder="Your room number"
                 name="room"
-                value={vistitime}
+                value={visittime}
                 onChange={(e) => setVisittime(e.target.value)}
               />
             </label>
