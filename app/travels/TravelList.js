@@ -50,7 +50,6 @@ export default async function TravelList() {
                   {travel.city}, {travel.country}
                 </h2>
                 <p>{travel.best_time_to_visit}</p>
-
                 <p>{travel.fun_fact}</p>
                 <p className="underline">{travel.not_to_miss}</p>
               </Link>
