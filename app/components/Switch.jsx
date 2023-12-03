@@ -23,7 +23,7 @@ const Switch = () => {
   return (
     <div>
       <label>
-        <input type="checkbox" checked={!darkMode} onChange={toggleDarkMode} />
+        <input type="checkbox" checked={darkMode} onChange={toggleDarkMode} />
         Dark Mode
       </label>
     </div>

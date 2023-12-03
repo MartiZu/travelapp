@@ -57,13 +57,6 @@ export default async function TravelList() {
 
             <div className="p-4">
               <Image src={img} placeholder="blur" blurDataURL="" alt="icon"/>
-              {/* <Image
-                src={travel.imglink}
-                alt={`Image for ${travel.city}`}
-                width={100}
-                height={24}
-                priority
-              /> */}
             </div>
           </div>
         ))}
