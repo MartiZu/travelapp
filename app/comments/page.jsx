@@ -1,6 +1,7 @@
 import getAllComments from "../../library/getAllComments";
 import getAllcomments from "../../library/getAllComments";
 import Link from "next/link";
+import Image from "next/image";
 import { Calendar } from "../../components/ui/calendar";
 import {
   Card,
@@ -33,7 +34,7 @@ export default async function CommentsPage() {
           <Card key={comment.id} className="flex flex-col justify-between">
             <CardHeader className="flex-row gap-4 items-center">
               <Avatar>
-                <img src={girl} alt="girl icon"/>
+                <Image src={girl} alt="girl icon"/>
                 <AvatarFallback>{comment.name.slice(0, 2)}</AvatarFallback>
               </Avatar>
               <div>

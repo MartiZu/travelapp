@@ -12,10 +12,11 @@ export default function Home() {
       >
         <div id="left-container" className="flex flex-col p-8 mx-10 rounded-lg border-2 border-black border-solid shadow-2xl">
           <div id="data-form" className="grid grid-cols-2 gap-4" >
-            <h2 className="col-span-2 text-justify text-4xl p-4">
-              Welcome to Wanderlust. The travel diary you did not know you needed.
+            <h2 className="col-span-2 text-4xl p-4">
+              Welcome to Wanderlust.
             </h2>
             <p className="col-span-2 text-justify text-xl p-4">The travel diary you did not know you needed.</p>
+            <p className="col-span-2 text-justify text-sm p-4">Register to stay always up to date...</p>
             <input placeholder="Name" className="p-2 rounded-lg border-2 border-black border-solid shadow-2xl" />
             <input placeholder="Email" className="p-2 rounded-lg border-2 border-black border-solid shadow-2xl" />
             <button className="col-span-2 p-2 bg-blue-500 text-white rounded-md">
@@ -26,7 +27,7 @@ export default function Home() {
         <div id="right-container" className="relative w-1/2 h-full mx-10">
           <Image
             className="object-cover w-full h-full rounded-md"
-            src={girl}
+            src={sub}
             alt="A sub swimming underwater"
             layout="fill"
           />
