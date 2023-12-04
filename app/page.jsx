@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import sub from './images/Sub-img.jpg';
+import sub from '../public/images/Sub-img.jpg';
+import girl from "../public/images/girl.png";
 
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
         <div id="right-container" className="relative w-1/2 h-full mx-10">
           <Image
             className="object-cover w-full h-full rounded-md"
-            src={sub}
+            src={girl}
             alt="A sub swimming underwater"
             layout="fill"
           />

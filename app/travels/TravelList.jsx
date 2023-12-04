@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import img from "../images/image-file.png"
+import img from "../../public/images/image-file.png"
 const baseURL = "https://travel-app-backend-oimo.onrender.com";
 
 async function getTravels() {

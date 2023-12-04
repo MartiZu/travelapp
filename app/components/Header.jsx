@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Switch from "./Switch"
+import Switch from "./Switch";
 
 export default function Header() {
   return (
@@ -16,7 +16,12 @@ export default function Header() {
         <Link className="hover:underline" href="/milestones">
           Milestones
         </Link>
-        <Link className="hover:underline"href="/users">Users</Link>
+        <Link className="hover:underline" href="/comments">
+          Comments
+        </Link>
+        <Link className="hover:underline" href="/users">
+          Users
+        </Link>
         <Link className="hover:underline" href="/addTravel">
           <button className="bg-pink-600 py-3 px-8 text-white rounded-2xl">
             Add Travel
@@ -24,7 +29,7 @@ export default function Header() {
         </Link>
       </div>
       <div>
-      <Switch />
+        <Switch />
       </div>
       {/* allows the link to be ready waiting to anothr page, the will be a tag in the inspect page*/}
     </nav>
