@@ -1,5 +1,7 @@
 async function getMilestones() {
-  const response = await fetch("http://localhost:4000/milestones");
+  const response = await fetch(
+    "https://travel-data-l747.onrender.com/milestones"
+  );
 
   const milestones = await response.json();
   console.log(milestones);

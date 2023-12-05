@@ -36,8 +36,9 @@ export default function NewsletterForm() {
       <div id="top-container" className="w-screen h-96 flex flex-row items-center">
         <div id="left-container" className="flex flex-col p-8 mx-10 rounded-lg border-2 border-black border-solid shadow-2xl">
           <div id="data-form" className="grid grid-cols-2 gap-4">
-            <h2 className="col-span-2 text-4xl p-4">Welcome to Wanderlust.</h2>
-            <p className="col-span-2 text-justify text-xl p-4">The travel diary you did not know you needed.</p>
+            <h2 className="col-span-2 text-4xl p-4 animate-ping">Welcome to Wanderlust.</h2>
+            <p className="col-span-2 text-justify text-xl p-4 animate-bounce">The travel diary you did not know you needed.</p>
+            <p className="col-span-2 text-justify text-sm p-4 animate-pulse">Register to stay always up to date...</p>
             {submitted ? (
               <p className="col-span-2 text-justify text-xl p-4">
                 Thank you for registering! You will receive our newsletter.
