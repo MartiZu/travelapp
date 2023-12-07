@@ -38,14 +38,14 @@ export default async function TravelList() {
 
   return (
     <main className="flex flex-col justify-center items-center shrink-0 m-20">
-      <div className="grid grid-cols-2 gap-6 p-2">
+      <div className="grid grid-cols-2 gap-6 p-2 ">
         {travels.map((travel) => (
           <div
-            className="grid grid-cols-3 p-8 w-full max-w-4xl leading-loose rounded-lg border-2 border-black border-solid shadow-2xl"
+            className=" grid grid-cols-3 p-8 w-full max-w-4xl leading-loose rounded-lg border-2 border-black border-solid shadow-2xl"
             key={travel.id}
           >
-            <div className="col-span-2">
-              <Link href={`/travels/${travel.id}`}>
+            <div className="col-span-2 ">
+              <Link className="hover:bg-grey-200" href={`/travels/${travel.id}`}>
                 <h2 className="font-bold text-xl">
                   {travel.city}, {travel.country}
                 </h2>

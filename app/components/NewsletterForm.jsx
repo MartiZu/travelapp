@@ -34,11 +34,9 @@ export default function NewsletterForm() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div id="top-container" className="w-screen h-96 flex flex-row items-center">
-        <div id="left-container" className="flex flex-col p-8 mx-10 rounded-lg border-2 border-black border-solid shadow-2xl">
+        <div id="left-container" className="flex flex-col w-1/2 h-64 p-8 mx-10 rounded-2xl border-2 border-black border-solid shadow-2xl">
           <div id="data-form" className="grid grid-cols-2 gap-4">
-            <h2 className="col-span-2 text-4xl p-4 animate-ping">Welcome to Wanderlust.</h2>
-            <p className="col-span-2 text-justify text-xl p-4 animate-bounce">The travel diary you did not know you needed.</p>
-            <p className="col-span-2 text-justify text-sm p-4 animate-pulse">Register to stay always up to date...</p>
+            <h2 className="text-xl col-span-2 text-justify p-4 animate-pulse">Register to stay always up to date...</h2>
             {submitted ? (
               <p className="col-span-2 text-justify text-xl p-4">
                 Thank you for registering! You will receive our newsletter.
@@ -69,9 +67,9 @@ export default function NewsletterForm() {
             )}
           </div>
         </div>
-        <div id="right-container" className="relative w-1/2 h-full mx-10">
+        <div id="right-container" className="relative w-1/2 h-64 mx-10">
           <Image
-            className="object-cover w-full h-full rounded-md"
+            className="object-cover w-full h-full rounded-2xl"
             src={sub}
             alt="A sub swimming underwater"
             layout="fill"

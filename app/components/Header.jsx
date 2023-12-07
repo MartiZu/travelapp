@@ -19,8 +19,8 @@ export default function Header() {
         <Link className="hover:underline" href="/comments">
           Comments
         </Link>
-        <Link className="hover:underline" href="/users">
-          Users
+        <Link className="hover:underline" href="/newsLetter">
+          Newsletter
         </Link>
         <Link className="hover:underline" href="/addTravel">
           <button className="bg-pink-600 py-3 px-8 text-white rounded-2xl">
