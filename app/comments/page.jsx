@@ -22,12 +22,12 @@ export default async function CommentsPage() {
   const comments = await commentsData;
 
   return (
-    <main>
-      <h2>
-        <Link href="/" className="col-span-2">
+    <main className="flex flex-col justify-center mx-20">
+     <h2 className="text-xl font-extrabold text-pink-600 flex flex-col items-center mx-20 my-16 border-pink-400 border-2 rounded-3xl px-6 py-6 shadow-2xl hover:bg-pink-400">Leave a comment!</h2>
+       {/* <h2> <Link href="/" className="col-span-2">
           Back to Home
         </Link>
-      </h2>
+      </h2> */}
       <br />
       <div className="grid grid-cols-2 gap-8">
         {comments.map((comment) => (
@@ -45,7 +45,7 @@ export default async function CommentsPage() {
             <CardContent>Comment: {comment.body}</CardContent>
             <CardFooter className="flex justify-between">
               <Button variant="secondary">
-                <Link href={`/comments/${comment.id}`}>View Comment<Badge variant="secondary">View</Badge></Link>
+                <Link href={`/comments/${comment.id}`}>View Comment<Badge variant="secondary"></Badge></Link>
               </Button>
             </CardFooter>
           </Card>

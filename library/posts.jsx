@@ -23,9 +23,19 @@ export function getSortedPostsData() {
       id,
       ...matterResult.data.title,
       date: matterResult.data.date,
+      author: matterResult.data.author,
     };
 
     //combine the data with the id
     return blogPost;
+  });
+
+  // Sort posts by date
+  return allPostsData.sort((a, b) => {
+    if (a.date < b.date) {
+      return 1;
+    } else {
+      return -1;
+    }
   });
 }

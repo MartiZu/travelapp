@@ -13,8 +13,8 @@ export default function Header() {
         <Link className="hover:underline" href="/travels">
           Travels
         </Link>
-        <Link className="hover:underline" href="/milestones">
-          Milestones
+        <Link className="hover:underline" href="/posts">
+          Blog posts
         </Link>
         <Link className="hover:underline" href="/comments">
           Comments
