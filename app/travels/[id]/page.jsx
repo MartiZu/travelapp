@@ -46,30 +46,35 @@ export default async function travel({ params }) {
           className="p-8 w-full max-w-4xl leading-loose rounded-lg"
           key={travel.id}
         >
-          <div className="flex flex-row justify-between">
+          <div className="flex flex-col justify-between">
             <h2 className="font-bold text-3xl text-center flex justify-center items-center">
               {travel.city}, {travel.country}
             </h2>
-            <Image className="rounded-2xl mt-10 border-4 "
+            <p>{travel.best_time_to_visit}</p>
+            <p>{travel.fun_fact}</p>
+          </div>
+          <div>
+            <Image
+              className="rounded-2xl mt-10 border-4 "
               src={travel.imglink}
               alt={`Image for ${travel.city}`}
               width={200}
               height={300}
               priority
             />
+            <a
+              className="underline"
+              href={travel.not_to_miss}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Not To Miss!
+            </a>
           </div>
-          <p>{travel.best_time_to_visit}</p>
-          <p>{travel.fun_fact}</p>
-          <a
-            className="underline"
-            href={travel.not_to_miss}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Not To Miss!
-          </a>
-          <h3 className="font-bold text-2xl pt-4">Fun Fact</h3>
-          <p>{travel.fun_fact}</p>
+          <div className="flex flex-col items-center mt-6 border-pink-400 border-2 rounded-3xl px-6 py-6 shadow-2xl hover:bg-pink-400">
+            <h3 className="font-bold text-2xl pt-4">Fun Fact</h3>
+            <p>{travel.fun_fact}</p>
+          </div>
         </div>
       </div>
     </main>

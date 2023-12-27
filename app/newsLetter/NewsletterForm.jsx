@@ -31,14 +31,19 @@ export default function NewsletterForm() {
   };
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div
-        id="top-container"
-        className="w-screen h-96 flex flex-row items-center"
-      >
-        <div
-          id="left-container"
-          className="flex flex-col w-1/2 h-64 p-8 mx-10 rounded-2xl border-2 border-black border-solid shadow-2xl"
+    <main className="px-6 flex min-h-screen flex-col items-center m-auto min-max-width">
+        <section id="img-container" className="py-6">
+          <Image
+            className="object-cover h-full rounded-2xl shadow-2xl items-center"
+            src="/images/Sub-img.jpg"
+            alt="A sub swimming underwater"
+            width={480}
+            height={200}
+          />
+        </section>
+        <section
+          id="form-container"
+          className="flex flex-col h-64 p-8 rounded-2xl border-2 border-black border-solid shadow-2xl"
         >
           <div id="data-form" className="grid grid-cols-2 gap-4">
             <h2 className="text-xl col-span-2 text-justify p-4 animate-pulse">
@@ -73,17 +78,7 @@ export default function NewsletterForm() {
               </>
             )}
           </div>
-        </div>
-        <div id="right-container" className="relative w-1/2 h-64 mx-10">
-          <Image
-            className="object-cover w-full h-full rounded-2xl"
-            src="/images/Sub-img.jpg"
-            alt="A sub swimming underwater"
-            width={300}
-            height={200}
-          />
-        </div>
-      </div>
+        </section>
     </main>
   );
 }
