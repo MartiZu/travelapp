@@ -8,6 +8,7 @@ const Switch = () => {
   useEffect(() => {
     // Check local storage for saved dark mode preference on component mount
     const savedDarkMode = localStorage.getItem('darkMode');
+    console.log(localStorage.getItem('darkMode'));
     if (savedDarkMode !== null) {
       setDarkMode(savedDarkMode === 'true');
     }

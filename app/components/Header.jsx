@@ -13,9 +13,9 @@ export default function Header() {
         <Link className="hover:underline text-base" href="/travels">
           Travels
         </Link>
-        <Link className="hover:underline text-base" href="/posts">
+        {/* <Link className="hover:underline text-base" href="/posts">
           Blog posts
-        </Link>
+        </Link> */}
         <Link className="hover:underline text-base" href="/comments">
           Comments
         </Link>
