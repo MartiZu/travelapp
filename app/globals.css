@@ -26,3 +26,13 @@ input, textarea {
 .dark-mode input, .dark-mode textarea {
   color: var(--foreground-color-light);
 }
+
+@media (min-width: 800px) {
+  .min-max-width {
+    max-width: 768px;
+    min-width: 768px;
+  }
+  .margin-change {
+    margin: auto;
+  }
+}

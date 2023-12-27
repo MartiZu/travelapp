@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 
 const Switch = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     // Check local storage for saved dark mode preference on component mount

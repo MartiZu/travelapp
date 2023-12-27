@@ -6,7 +6,7 @@ const baseURL = "https://travel-app-backend-oimo.onrender.com";
 async function getTravels() {
   try {
     // Simulate a delay (remove this line in production)
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // await new Promise((resolve) => setTimeout(resolve, 2000));
 
     const response = await fetch(`${baseURL}/travel`, {
       method: "GET",
@@ -21,7 +21,7 @@ async function getTravels() {
     }
 
     const travels = await response.json();
-    console.log(travels);
+    // console.log(travels);
     return travels.data;
   } catch (error) {
     // Log the error to the console for debugging
@@ -34,7 +34,7 @@ async function getTravels() {
 
 export default async function TravelList() {
   const travels = await getTravels();
-  console.log(travels);
+  // console.log(travels);
 
   return (
     <main className="flex flex-col justify-center items-center shrink-0 m-20">
@@ -49,14 +49,14 @@ export default async function TravelList() {
                 <h2 className="font-bold text-xl">
                   {travel.city}, {travel.country}
                 </h2>
-                <p>{travel.best_time_to_visit}</p>
+                {/* <p>{travel.best_time_to_visit}</p>
                 <p>{travel.fun_fact}</p>
-                <p className="underline">{travel.not_to_miss}</p>
+                <p className="underline">{travel.not_to_miss}</p> */}
               </Link>
             </div>
 
             <div className="p-4">
-              <Image src={img} placeholder="blur" blurDataURL="" alt="icon"/>
+              {/* <Image src={travel.imglink} width={50} height={50} alt={`${travel.country} Image`}/> */}
             </div>
           </div>
         ))}
