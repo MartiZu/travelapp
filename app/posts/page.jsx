@@ -1,9 +1,9 @@
-import Posts from "./Posts"
+// import Posts from "./Posts"
 
-export default function DisplayPosts() {
-  return (
-    <div>
-      <Posts /> 
-    </div>
-  )
-}
+// export default function DisplayPosts() {
+//   return (
+//     <div>
+//       <Posts /> 
+//     </div>
+//   )
+// }
