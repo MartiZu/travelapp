@@ -13,9 +13,6 @@ export default function Header() {
         <Link className="hover:underline text-base" href="/travels">
           Travels
         </Link>
-        {/* <Link className="hover:underline text-base" href="/posts">
-          Blog posts
-        </Link> */}
         <Link className="hover:underline text-base" href="/comments">
           Comments
         </Link>
@@ -31,7 +28,6 @@ export default function Header() {
       <div>
         <Switch />
       </div>
-      {/* allows the link to be ready waiting to anothr page, the will be a tag in the inspect page*/}
     </nav>
   );
 }
